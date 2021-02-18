@@ -18,9 +18,9 @@ function replaceItems(madlib, items) {
   let mad = madlib.content;
   let i = 0;
   let r = mad.replace(/\[([^\])]*)\]/g, function() {
-    if (items[i] === undefined) {
+    if (items[i] === undefined || items[i] === "") {
       return `<mark>${options[i++]}</mark>`;
-    } else return `<strong>${items[i++]}</strong>`;
+    } else return `<span style="background-color:#b1efd3"><strong>${items[i++]}</strong></span>`;
   });
   return r;
 }

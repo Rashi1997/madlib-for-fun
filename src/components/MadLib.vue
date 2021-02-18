@@ -1,9 +1,9 @@
 <template>
-  <div class="hello m-4">
+  <div class="hello mt-4">
     <b-button variant="button-color" size="sm" v-on:click="nextMadlib"
       ><b class="text-white">{{ msg }}</b></b-button
     >
-    <b-container class="bv-example-row m-2">
+    <b-container class="bv-example-row mt-2">
       <b-row align-h="center" align-v="center">
         <b-col cols="7"
           ><Form
