@@ -8,9 +8,7 @@ module.exports = {
       enableInSFC: false,
     },
     publicPath:
-      process.env.NODE_ENV === "production"
-        ? "/madlib-for-fun/"
-        : "/madlib-for-fun/",
+      process.env.NODE_ENV === "production" ? "/madlib-for-fun/" : "/",
   },
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
