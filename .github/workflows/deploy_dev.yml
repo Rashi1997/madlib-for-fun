@@ -1,0 +1,31 @@
+name: Deploy Dev
+
+on:
+  push:
+    branches:
+      - main
+    repository_dispatch:
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: npm install
+      env:
+        VUE_APP_GITHUB_TOKEN: ${{ secrets.VUE_APP_GITHUB_TOKEN }}
+        VUE_APP_GITHUB_USER: ${{ secrets.VUE_APP_GITHUB_USER }}
+      run: |
+        npm install
+    - name: npm build
+      env:
+        NODE_ENV: production
+      run: |
+        npm run build
+    - name: Deploy to GH Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./dist
