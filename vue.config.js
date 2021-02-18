@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: "/",
   transpileDependencies: ["vuetify"],
   pluginOptions: {
     i18n: {
@@ -7,8 +8,14 @@ module.exports = {
       localeDir: "locales",
       enableInSFC: false,
     },
-    publicPath:
-      process.env.NODE_ENV === "production" ? "/madlib-for-fun/" : "/",
+    configureWebpack: {
+      optimization: {
+        splitChunks: {
+          minSize: 10000,
+          maxSize: 250000,
+        },
+      },
+    },
   },
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
