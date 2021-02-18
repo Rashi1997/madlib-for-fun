@@ -7,7 +7,10 @@ module.exports = {
       localeDir: "locales",
       enableInSFC: false,
     },
-    publicPath: process.env.NODE_ENV === "production" ? "/madlib-for-fun/" : "/",
+    publicPath:
+      process.env.NODE_ENV === "production"
+        ? "/madlib-for-fun/"
+        : "/madlib-for-fun/",
   },
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
