@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: "/",
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/madlib-for-fun/" : "/",
   transpileDependencies: ["vuetify"],
   pluginOptions: {
     i18n: {
