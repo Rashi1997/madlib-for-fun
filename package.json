@@ -6,7 +6,8 @@
     "commit": "git-cz",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:prod": "NODE_ENV=production vue-cli-service build"
   },
   "config": {
     "commitizen": {
