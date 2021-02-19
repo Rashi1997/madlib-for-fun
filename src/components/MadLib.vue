@@ -3,6 +3,7 @@
     <b-button variant="button-color" size="sm" v-on:click="nextMadlib"
       ><b class="text-white">{{ msg }}</b></b-button
     >
+    <h1 class="my-5">{{ madlib.title }}</h1>
     <b-container class="bv-example-row mt-2">
       <b-row align-h="center" align-v="center">
         <b-col cols="7"
@@ -36,7 +37,7 @@ export default {
     index: 0,
     madlibs: madlibs,
     madlib: madlibs[0],
-    text: highlight(madlibs[0])
+    text: highlight(madlibs[0]),
   }),
   components: {
     Form,
